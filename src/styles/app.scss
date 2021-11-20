@@ -1,0 +1,85 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  width: 100vw;
+  background: rgb(26, 28, 29);
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: "Quicksand", sans-serif;
+
+  &.a1 {
+    padding: 0.4rem 3rem;
+    font-size: 1.2rem;
+    height: 48px;
+    color: #131313 !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 24px;
+    transition: all 0.5s;
+
+    &.small {
+      height: 36px;
+      border-radius: 18px;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+      box-shadow: -2px 2px 5px rgba(104, 104, 104, 0.352);
+    }
+
+    &.yellow {
+      background-color: #ffca69;
+    }
+    &.cancel {
+      background-color: #fff;
+      border: 1px solid #131313;
+    }
+    &.green {
+      background-color: #b2f7ef;
+      width: 180px;
+    }
+  }
+}
+
+.App {
+  width: 100vw;
+  margin-right: 1rem;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem 0 0.1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0 !important;
+  }
+}
+
+@import "./header.scss";
+@import "./watchlist.scss";
+@import "./news.scss";
+@import "./stocks-table.scss";
+@import "./article.scss";
+@import "./main-chart.scss";
+@import "./modal.scss";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");

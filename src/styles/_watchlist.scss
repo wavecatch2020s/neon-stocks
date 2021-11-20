@@ -1,0 +1,100 @@
+.watchlist {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 600px;
+  * {
+    color: #fff;
+  }
+
+  .main-chart {
+    flex: 0.7;
+    border: 1px dotted #333;
+    padding: 1rem;
+    .linegraph {
+      width: 600px;
+      height: 300px;
+      canvas {
+        object-fit: contain;
+      }
+    }
+  }
+
+  .other-stocks {
+    flex: 0.3;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px 30px 30px;
+    color: #fff;
+
+    border: 1px dotted #686868;
+
+    .stock-list-lists {
+      height: 52px;
+      border-top: 1px solid #42494d;
+      padding: 4px 20px 0px 20px;
+    }
+
+    .stock-list_header {
+      display: flex;
+      font-size: 16px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #42494d;
+      padding: 20px 20px 10px 20px;
+      font-weight: 500;
+    }
+
+    .stock-list_content {
+      font-size: 13px;
+
+      .row-item {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        padding: 0 24px;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #31363a;
+        }
+
+        .row-item__intro > h3 {
+          font-size: 16px;
+          font-weight: bold;
+          padding-bottom: 2px;
+        }
+
+        .row-item__intro > p {
+          font-size: 12px;
+        }
+
+        .row-item__chart {
+          canvas {
+            max-width: 165px;
+            max-height: 55px;
+          }
+        }
+
+        .row-item__numbers {
+          text-align: end;
+          font-weight: 500;
+        }
+
+        .row-item__price {
+          padding-bottom: 4px;
+        }
+
+        .row-item__percentage {
+          color: #5ac53b;
+        }
+        .price__falling {
+          color: #fa7272;
+        }
+      }
+    }
+  }
+}
