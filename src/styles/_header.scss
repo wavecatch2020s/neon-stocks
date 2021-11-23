@@ -20,12 +20,10 @@ header {
     background-color: transparent;
     border: none;
     padding: 0.5rem;
+    z-index: 36;
     &:hover {
       cursor: pointer;
-      text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 7px #fff,
-        0 0 14px rgb(34, 240, 255), 0 0 28px rgb(34, 240, 255),
-        0 0 32px rgb(34, 240, 255), 0 0 36px rgb(34, 240, 255),
-        0 0 48px rgb(34, 240, 255);
+      color: rgb(34, 240, 255);
     }
   }
 
@@ -34,7 +32,7 @@ header {
     font-family: "Varela Round", sans-serif;
     font-size: 1.5rem;
     color: #fff;
-    width: 180px;
+    max-height: 1.5rem;
     text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 7px #fff,
       0 0 14px rgb(34, 240, 255), 0 0 28px rgb(34, 240, 255),
       0 0 32px rgb(34, 240, 255), 0 0 36px rgb(34, 240, 255),
