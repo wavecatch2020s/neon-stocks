@@ -59,6 +59,16 @@ header {
         color: #fff;
         background-color: rgb(33, 33, 33);
       }
+
+      input,
+      textarea {
+        -webkit-user-select: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+
       .search-results {
         position: absolute;
         right: 0;

@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 
 const CompanyCard = ({ displayedStock }) => {
-  const [animatedStatus, setAnimated] = useState(true);
+  // const [animatedStatus, setAnimated] = useState(true);
   const const1 = displayedStock.priceChanges.oneDayChange;
   const const2 = displayedStock.priceChanges.sevenDaysChange;
 
-  useEffect(() => {
-    setAnimated(true);
-  }, [displayedStock.logo]);
+  // useEffect(() => {
+  //   setAnimated(true);
+  // }, [displayedStock.logo]);
 
-  useEffect(() => {
-    let timer2 = setTimeout(() => {
-      console.log("timer works");
-      setAnimated(false);
-    }, 2000);
-    return () => {
-      clearTimeout(timer2);
-    };
-  }, [displayedStock.logo]);
+  // useEffect(() => {
+  //   let timer2 = setTimeout(() => {
+  //     console.log("timer works");
+  //     setAnimated(false);
+  //   }, 2000);
+  //   return () => {
+  //     clearTimeout(timer2);
+  //   };
+  // }, [displayedStock.logo]);
 
   return (
     <div className="left-side">
-      <div className={`top ${animatedStatus ? "animation" : ""}`} id="top">
+      <div className="top" id="top">
         <div className="top-left">
           <img src={displayedStock.logo} alt="" />
         </div>
