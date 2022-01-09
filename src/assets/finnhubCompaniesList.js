@@ -29,5 +29,14 @@ const finnhubCompaniesList = [
   // "PEP",
   // "KO",
 ];
+// const finnhubCompaniesList = [
+//   // "BAC",
+//   // "DIS",
+//   // "MA",
+//   "PYPL",
+//   "NFLX",
+//   "ADBE",
+//   "ADBE",
+// ];
 
 export default finnhubCompaniesList;

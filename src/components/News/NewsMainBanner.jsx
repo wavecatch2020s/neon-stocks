@@ -111,18 +111,20 @@ const NewsMainBanner = () => {
   dispatch(newsActions.articleToBeShown(mainStory));
 
   return (
-    <div className="news-main-banner">
-      <div className="left">{leftNews}</div>
-      <div className="middle">
-        <MainNewsStory
-          title={mainStory.title}
-          text={mainStory.text}
-          key={mainStory.id}
-          id={mainStory.id}
-          imageURLIndex={mainStory.imageURLIndex}
-        />
+    <div className="container">
+      <div className="news-main-banner">
+        <div className="left">{leftNews}</div>
+        <div className="middle">
+          <MainNewsStory
+            title={mainStory.title}
+            text={mainStory.text}
+            key={mainStory.id}
+            id={mainStory.id}
+            imageURLIndex={mainStory.imageURLIndex}
+          />
+        </div>
+        <div className="right">{rightNews}</div>
       </div>
-      <div className="right">{rightNews}</div>
     </div>
   );
 };

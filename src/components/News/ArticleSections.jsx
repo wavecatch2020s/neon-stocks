@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Article from "./Article";
-import Loader from "../Stock Feed/Loader";
-import ArrowUp from "../ArrowUp";
+import Loader from "../Stocks/Loader";
+import ArrowUp from "../UI/ArrowUp";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 

@@ -24,7 +24,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  button {
+  a {
     outline: none;
     border: none;
     background-color: transparent;
@@ -32,6 +32,10 @@
     font-size: 1.5rem;
     padding: 1rem;
     text-shadow: 0 0 15px #fff, 0 0 20px #fff;
+    &:hover {
+      text-shadow: 0 0 30px rgb(176, 240, 255), 0 0 20px rgb(146, 235, 255);
+      color: aqua;
+    }
   }
 }
 

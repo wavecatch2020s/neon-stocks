@@ -1,36 +1,32 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { stocksActions } from "../../redux/stocks-slice";
-import { uiActions } from "../../redux/ui-slice";
 import LineChart from "./LineChart";
 
 const StocksRow = (props) => {
-  const dispatch = useDispatch();
   const highlightedRowTicker = useSelector(
     (state) => state.stocks.displayedStock
   );
-  const showGraph = useSelector((state) => state.ui.showGraph);
 
   const openChart = () => {
-    dispatch(stocksActions.showThisStock(props.stockItem));
-    dispatch(uiActions.showGraph(true));
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
     <div
       className={`row ${
-        props.stockItem.ticker === highlightedRowTicker.ticker && showGraph
+        props.stockItem.ticker === highlightedRowTicker.ticker
           ? "highlighted-row"
           : ""
       }`}
-      onClick={openChart}
     >
       <div className="item-number">{props.index + 1}</div>
-      <div className="item-name">
-        <h3>{props.stockItem.name}</h3>
-        <h5>{props.stockItem.ticker}</h5>
+      <div onClick={openChart} className="item-name">
+        <Link to={`/stocks/${props.stockItem.ticker}`}>
+          <h3>{props.stockItem.name}</h3>
+          <h5>{props.stockItem.ticker}</h5>
+        </Link>
       </div>
       <div className="item-price">{`$${props.stockItem.currentPrice}`}</div>
       <div

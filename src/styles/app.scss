@@ -13,6 +13,10 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   font-family: "Quicksand", sans-serif;
 
@@ -81,5 +85,6 @@ button {
 @import "./article.scss";
 @import "./main-chart.scss";
 @import "./modal.scss";
+@import "./loading-spinner.scss";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");

@@ -110,8 +110,27 @@ header {
     .hamburger-menu {
       display: none;
     }
-    .header-item {
-      margin-left: 1rem;
+
+    ul {
+      display: flex;
+      margin-right: 0.8rem;
+      .header-item {
+        list-style: none;
+        a {
+          margin-left: 1.5rem;
+          text-decoration: none;
+          color: #fff;
+          font-size: 1.2rem;
+          background-color: transparent;
+          border: none;
+          padding: 0.5rem;
+          z-index: 36;
+          &:hover {
+            cursor: pointer;
+            color: rgb(34, 240, 255);
+          }
+        }
+      }
     }
   }
 }

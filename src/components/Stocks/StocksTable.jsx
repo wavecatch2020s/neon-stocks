@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+
+import InfiniteScroll from "react-infinite-scroll-component";
+
 import StocksRow from "./StocksRow";
 import finnhubCompaniesList from "../../assets/finnhubCompaniesList";
 import Loader from "./Loader";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 const StocksTable = () => {
-  const [numberOfStocksLoaded, LoadMoreStocks] = useState(3);
+  const [numberOfStocksLoaded, LoadMoreStocks] = useState(9);
   const stocksList = useSelector((state) => state.stocks.stocksList);
   console.log(`stocksList.length: ${stocksList.length}`);
 
@@ -34,11 +36,14 @@ const StocksTable = () => {
 
   //data to be loaded
   const allStocks = finnhubCompaniesList;
+  let populatedList = [];
 
-  const populatedList = allStocks.map((stock) => {
-    const foundIndex = stocksList.findIndex((item) => item.ticker === stock);
-    return stocksList[foundIndex];
-  });
+  if (typeof allStocks !== "undefined") {
+    populatedList = allStocks.map((stock) => {
+      const foundIndex = stocksList.findIndex((item) => item.ticker === stock);
+      return stocksList[foundIndex];
+    });
+  }
 
   let generatedList = [];
 

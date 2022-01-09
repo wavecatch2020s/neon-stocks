@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import MainSection from "./components/MainSection";
+import { useDispatch, useSelector } from "react-redux";
+import MainLayout from "./components/UI/MainLayout";
 
 import Header from "./components/Header/Header";
-
+import HamburgerMenu from "./components/UI/HamburgerMenu";
 import { fetchStocks } from "./redux/fetch-actions";
 
 function App() {
   const dispatch = useDispatch();
+
+  const showModal = useSelector((state) => state.ui.showModal);
 
   console.log("App reRendered");
 
@@ -19,7 +21,9 @@ function App() {
     <div className="App">
       <main>
         <Header />
-        <MainSection />
+        {showModal ? <HamburgerMenu /> : ""}
+
+        <MainLayout />
       </main>
     </div>
   );
