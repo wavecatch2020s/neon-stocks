@@ -1,30 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../redux/ui-slice";
-import { stocksActions } from "../../redux/stocks-slice";
-
-import { useParams } from "react-router-dom";
 
 import LineChart from "./LineChart";
-import CompanyCard from "./CompanyCard";
 
 const MainChart = () => {
   let highlightedRange = useSelector((state) => state.ui.highlightedTimeRange);
   let displayedStock = useSelector((state) => state.stocks.displayedStock);
-  let stocksList = useSelector((state) => state.stocks.stocksList);
   const [changedTimeRangeData, setChangedTimeRangeData] = useState(
     displayedStock.data
   );
   const dispatch = useDispatch();
-  const params = useParams();
-  const stockItem = stocksList.find(
-    (item) => item.ticker === params.stockTicker
-  );
   useEffect(() => {
     setChangedTimeRangeData(displayedStock.data);
-
-    dispatch(stocksActions.showThisStock(stockItem));
-  }, [params]);
+  }, [displayedStock]);
 
   console.log("MainChart rerendered");
 
@@ -45,7 +34,6 @@ const MainChart = () => {
   return (
     <div className="container">
       <div className="main-chart">
-        <CompanyCard displayedStock={displayedStock} />
         <div className="main-canvas">
           <LineChart
             chartData={changedTimeRangeData}

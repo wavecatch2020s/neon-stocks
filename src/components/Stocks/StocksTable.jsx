@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -10,7 +10,7 @@ import Loader from "./Loader";
 const StocksTable = () => {
   const [numberOfStocksLoaded, LoadMoreStocks] = useState(9);
   const stocksList = useSelector((state) => state.stocks.stocksList);
-  console.log(`stocksList.length: ${stocksList.length}`);
+  console.log(stocksList);
 
   const topRow = (
     <div className="top-row row">
@@ -38,19 +38,26 @@ const StocksTable = () => {
   const allStocks = finnhubCompaniesList;
   let populatedList = [];
 
-  if (typeof allStocks !== "undefined") {
-    populatedList = allStocks.map((stock) => {
-      const foundIndex = stocksList.findIndex((item) => item.ticker === stock);
-      return stocksList[foundIndex];
-    });
+  if (stocksList.length > 0) {
+    populatedList = allStocks
+      .map((stock) => {
+        const foundIndex = stocksList.findIndex(
+          (item) => item.ticker === stock
+        );
+        return stocksList[foundIndex];
+      })
+      .slice(0, -1);
   }
+  console.log(allStocks);
+  console.log(populatedList);
 
   let generatedList = [];
 
   // if data is fetched from API and then loaded from redux
   if (
-    stocksList.length > 0 &&
-    numberOfStocksLoaded <= finnhubCompaniesList.length
+    stocksList.length > 0
+    // &&
+    // numberOfStocksLoaded <= finnhubCompaniesList.length
   ) {
     generatedList = populatedList
       .slice(0, numberOfStocksLoaded)

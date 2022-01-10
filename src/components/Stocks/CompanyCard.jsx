@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const CompanyCard = ({ displayedStock }) => {
   const const1 = displayedStock.priceChanges.oneDayChange;

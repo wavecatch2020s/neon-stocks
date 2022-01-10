@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { uiActions } from "../../redux/ui-slice";
 import SearchContainer from "./SearchContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

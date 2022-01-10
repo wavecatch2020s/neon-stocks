@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import MainChart from "../components/Stocks/MainChart";
+import StockDisplayed from "../components/Stocks/StockDisplayed";
 import StocksTable from "../components/Stocks/StocksTable";
 
 const Stocks = () => {
@@ -11,7 +11,7 @@ const Stocks = () => {
   return stocksList.length > 0 ? (
     <Fragment>
       <Route path="/stocks/:stockTicker">
-        <MainChart />
+        <StockDisplayed />
       </Route>
       <StocksTable />
     </Fragment>
